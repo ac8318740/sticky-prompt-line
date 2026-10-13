@@ -1,0 +1,48 @@
+{
+  "name": "sticky-prompt-line",
+  "version": "0.1.0",
+  "description": "Pi extension that shows the nearest off-screen user prompt as a one-line sticky transcript marker.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "ac8318740"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ac8318740/sticky-prompt-line.git"
+  },
+  "homepage": "https://github.com/ac8318740/sticky-prompt-line#readme",
+  "bugs": {
+    "url": "https://github.com/ac8318740/sticky-prompt-line/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "sticky-prompt",
+    "terminal",
+    "agentic-coding"
+  ],
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node --check index.js",
+    "check": "node --check index.js && node test.js"
+  },
+  "pi": {
+    "extensions": [
+      "./index.js"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-tui": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-tui": "1.2.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}
