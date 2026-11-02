@@ -9,7 +9,7 @@ It shows the nearest user prompt above the current transcript top. The line stay
 From this checkout:
 
 ```sh
-pi --extension /home/acoote/sticky-prompt-line
+pi --extension ./index.js
 ```
 
 Or add the package path to your Pi extensions config.
@@ -22,4 +22,8 @@ npm run check
 
 ## Notes
 
-Pi does not currently expose transcript scroll state through the public extension API. This first pass uses Pi fullscreen TUI runtime getters for scroll state and its existing prompt navigation method for click-to-jump.
+Pi does not expose role-tagged transcript positions through the public extension API. This extension reads the fullscreen scroll view and Pi's cached rendered child heights, identifies user-message components, and jumps directly to the measured row. It does not count assistant prompt markers, estimate tool heights, render components again, or patch renderers.
+
+This relies on private runtime fields (`getPrimaryScrollView`, `child`, `mouseLayout`, and user-message `text`) and the `UserMessageComponent` class name. Pi upgrades may require changes.
+
+Missing measurements hide the line. The extension skips containers whose rendered height differs from their cached child heights rather than guessing offsets. It does not support custom transcript wrappers that change row order or add padding.
