@@ -4,15 +4,29 @@ Tiny Pi extension that shows one dim sticky line when you scroll up in the fulls
 
 It shows the nearest user prompt above the current transcript top. The line stays to one row, truncates overflow with `...`, and jumps to that prompt when clicked.
 
-## Use
+## Install
+
+Install the published package:
+
+```sh
+pi install npm:sticky-prompt-line
+```
+
+Restart Pi or run `/reload` in an existing session to load the extension.
+
+To try it for one invocation without adding it to your settings:
+
+```sh
+pi -e npm:sticky-prompt-line
+```
+
+## Local development
 
 From this checkout:
 
 ```sh
 pi --extension ./index.js
 ```
-
-Or add the package path to your Pi extensions config.
 
 ## Check
 
